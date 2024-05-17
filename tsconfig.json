@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true,
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "components/Typeandtype/Typeandtype.jsx",
+    "components/product/product.jsx",
+    "components/benefits/Benefit.jsx",
+    "components/tabs-home-genero/cabecera.jsx",
+    "components/tabs-home-genero/main-tab.jsx",
+    "components/hombre-mujer/semi-filtro-home.jsx",
+    "components/hombre-mujer/hombre-mujer.jsx",
+    "components/carrito/carrito.jsx",
+    "components/video/video.jsx",
+    "app/api/checkout/route.js",
+    "app/api/exito/route.js",
+    "components/product-add-to-cart.jsx",
+    "app/nuestras-tiendas/page.js",
+    "app/emprende/page.js",
+    "components/seo-meta-product-view/generateMetadata.js",
+    "components/icon-whatsapp/icon-whatapp.js"
+, "components/icon-whatsapp/icon-whatapp.tsx", "components/cart-items.js", "components/Header/Nav/nav-menu-desktop.tsx", "components/Header/Nav/nav-menu-hover-desktop.tsx", "components/Header/Nav/nav-navigation.jsx", "components/comunicado/comunicado.js"  ],
+  "exclude": ["node_modules"]
+}
