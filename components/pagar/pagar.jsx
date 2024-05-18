@@ -142,7 +142,7 @@ export default function PaginaPagar() {
                         color="white"
                         className="text-sm font-normal"
                       >
-                        Recojo en tienda Fritz Sport, Av. Miguel Grau 231, Lima
+                        Recojo en tienda Fz Premium, Av. Miguel Grau 231, Lima
                         15001
                       </Typography>
                     </div>

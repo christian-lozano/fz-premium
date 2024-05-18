@@ -19,8 +19,8 @@ export default function PromoImageGrid({
     <div className="relative my-10 flex w-full flex-col items-center justify-center xl:block ">
       <img src={urlImg} alt="" className=" " width={350} height={400} />
       <div className="mt-1 ">
-        <h3 className="font-extrabold uppercase xl:text-xl">{titulo}</h3>
-        <p className="mb-3 mt-2 text-xs">{subtitulo}</p>
+        {/* <h3 className="font-extrabold uppercase xl:text-xl">{titulo}</h3> */}
+        {/* <p className="mb-3 mt-2 text-xs">{subtitulo}</p> */}
         {/* <Button className="mt-1 rounded-none uppercase">Comprar Ahora</Button> */}
       </div>
     </div>

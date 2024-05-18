@@ -17,7 +17,7 @@ export function ProductGridTab({ products }: Props) {
         <div>
           <XCircle className="mx-auto h-10 w-10 text-gray-500 dark:text-gray-200" />
           <h1 className="mt-2 text-xl font-bold tracking-tight text-gray-500 dark:text-gray-200 sm:text-2xl">
-            No se encontraron productos{" "}
+            No se encontraron productos
           </h1>
         </div>
       </div>
@@ -26,9 +26,11 @@ export function ProductGridTab({ products }: Props) {
 
   return (
     <div className=" grid w-full grid-cols-2 gap-x-4 gap-y-10 xl:container xl:grid xl:grid-cols-3 xl:justify-center xl:gap-4">
-      {products.map((product) => (
-        <Product products={product} />
-      ))}
+      {products
+        .filter((el) => el.stock > 0)
+        .map((product) => (
+          <Product products={product} />
+        ))}
     </div>
   )
 }

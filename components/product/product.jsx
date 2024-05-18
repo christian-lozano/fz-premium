@@ -54,7 +54,7 @@ export default function Product({ products, generoSku = false }) {
               <h5 className="mt-4 text-xs font-medium">Sku: {products.sku}</h5>
             </div>
           )}
-          <h3 className="mt-2 text-lg font-medium uppercase xl:text-xl">
+          <h3 className="mt-2 text-sm font-medium uppercase xl:text-xl ">
             {products.name}
           </h3>
 

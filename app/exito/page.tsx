@@ -8,8 +8,6 @@ import { notFound } from "next/navigation"
 import { PatchSelection } from "@sanity/client"
 import { useCart } from "react-use-cart"
 
-
-
 // tr
 export default function Page() {
   const { emptyCart } = useCart()
@@ -39,8 +37,8 @@ export default function Page() {
         .then((res) => res.json())
         .then(async (resultado) => {
           // setResultado(resultado)
-      
-          let   resulta = await client
+
+          let resulta = await client
             .patch(String(preference_id))
             .set({ estado: "pagado", id_mercado_pago: collection_id })
             .commit()
@@ -173,7 +171,7 @@ export default function Page() {
             ) : (
               <span>
                 ACÉRCATE A NUESTRA SEDE: <br />
-                Fritz Sport, Av. Miguel Grau 231, Lima 15001. <br /> DESPUÉS DE
+                Fz Premium, Av. Miguel Grau 231, Lima 15001. <br /> DESPUÉS DE
                 48 HORAS DE LUNES A VIERNES DE 10AM A 7PM Y SABADOS DE 9AM A
                 12PM PARA EL RECOJO DE TU PEDIDO
               </span>

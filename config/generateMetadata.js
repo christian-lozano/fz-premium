@@ -4,7 +4,7 @@ import { groq } from "next-sanity"
 
 export async function metadataPage({ params }) {
   const product = await client.fetch(
-  groq`*[_type == "product" && slug.current == "${params.slug}"][0] {
+    groq`*[_type == "product" && slug.current == "${params.slug}"][0] {
   _id,
   _createAt,
   "id":_id,
@@ -22,7 +22,7 @@ export async function metadataPage({ params }) {
       title: `Producto: ${product.name}`,
       description: `${product.name}-${product.slug}-${product.sku}-${product.genero}-${product.tipo}`,
       url: `${process.env.URL_DOMINIO}/products/${product.slug}/${product.slug}`,
-      siteName: "Fritz Sport",
+      siteName: "Fz Premium",
       images: [
         {
           url: `${urlForImage(product.images[0].asset._ref).url()}`,

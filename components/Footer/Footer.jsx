@@ -65,7 +65,7 @@ const columns = [
         text: "Trabaja con Nosotros",
         link: "https://wa.me/51908843497/?text=quisiera%20trabajar%20en%20Fritz%20Sport",
         // link: "https://api.whatsapp.com/send/?phone=51908843497&text&type=phone_number&app_absent=0?text=quisiera%20trabajar%20en%20Fritz%20Sport",
-      },  
+      },
     ],
   },
 ]
@@ -234,7 +234,7 @@ const Footer = (props) => {
       <div className="rights">
         <h5 className="graytext">
           <span>
-            Todos los derechos Reservados Fritz Sport {date.getFullYear()}
+            Todos los derechos Reservados Fz Premium {date.getFullYear()}
           </span>
           <small>Images are the property of Adidas and Nike ecommerce</small>
         </h5>

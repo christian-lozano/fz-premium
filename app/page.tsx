@@ -11,37 +11,33 @@ import MainTab from "@/components/tabs-home-genero/main-tab"
 import "@/styles/globals.css"
 import { Metadata } from "next"
 
-import PromoImageSec from "@/components/card-gif/card-gif"
-import CardGif from "@/components/card-gif/card-gif"
-import ContedorCarouselProduct from "@/components/carousel-product/contedor-carousel-product"
-import { DialogSizes } from "@/components/comunicado/comunicado"
 import PromoImageGrid from "@/components/promo-image-grid/promo-image-grid"
 import PromoImage from "@/components/promo-image/promo-image"
 import VideoHome from "@/components/video/video"
 
 export const metadata: Metadata = {
-  title: "Fritz Sport Perú Tienda oficial | Zapatillas y ropa deportiva",
+  title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:
-    "Bienvenido(a) al sitio oficial de Fritz Sport Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
+    "Bienvenido(a) al sitio oficial de Fz Premium Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
   openGraph: {
-    title: " Fritz Sport Perú Tienda oficial | Zapatillas y ropa deportiva",
+    title: " Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
     description:
-      "Bienvenido(a) al sitio oficial de Fritz Sport Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
+      "Bienvenido(a) al sitio oficial de Fz Premium Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
     url: `${process.env.URL_DOMINIO}`,
-    siteName: "Fritz Sport",
+    siteName: "Fz Premium",
     images: [
       {
         url: `${process.env.URL_DOMINIO}/ecommerce-share.jpg`,
         width: 800,
         height: 600,
-        alt: `Fritz Sport share Imagen`,
+        alt: `Fz Premium share Imagen`,
       },
       {
         url: `${process.env.URL_DOMINIO}/ecommerce-share.jpg`,
 
         width: 1200,
         height: 630,
-        alt: `Fritz Sport share Imagen`,
+        alt: `Fz Premium share Imagen`,
       },
     ],
   },
@@ -167,7 +163,7 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `| order(_id) [0...${cantidad}]`
 
-    const productFilter = `_type == "product"  && razonsocial match "fritzsport"`
+    const productFilter = `_type == "product" && priceecommerce > 400`
 
     const generoFilterHombre = genero ? `&& genero match "${genero}"` : ""
 
@@ -188,6 +184,7 @@ export default async function Page({ searchParams }: Props) {
       genero,
       marca,
       tallas,
+      stock,
       descuento,
       preciomanual,
       "slug":slug.current
@@ -320,8 +317,10 @@ export default async function Page({ searchParams }: Props) {
             urlMob={
               "https://img.adidas.com.hk/resources/2024/5/korn/kv750x960.gif"
             }
-            titulo={"samba especial Gazela"}
-            subtitulo={"Un original, miles de historias que partieron de él."}
+            titulo={"ADIDAS ORIGINALS X CORN"}
+            subtitulo={
+              "Diseñado para una nueva generación de tiradores. Fiel al ADN del Arsenal"
+            }
             url={"/tienda"}
             bottom={false}
           />
@@ -333,8 +332,10 @@ export default async function Page({ searchParams }: Props) {
               urlMob={
                 "https://img.adidas.com.hk/resources/2024/5/BAD/BAD%20BUNNY-feature-mob654x960.jpg"
               }
-              titulo={"samba especial Gazela"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
+              titulo={"ADIDAS ORIGINALS X BAD BUNNY"}
+              subtitulo={
+                "Los zapatos Last Campus están inspirados en el estilo western favorito de Benito y su Most Wanted Tour"
+              }
               url={"/tienda"}
               bottom={true}
             />
@@ -346,8 +347,10 @@ export default async function Page({ searchParams }: Props) {
               urlMob={
                 "https://img.adidas.com.hk/resources/2024/4/SL72/SL-72-feature-mob654x960.gif"
               }
-              titulo={"samba especial Gazela"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
+              titulo={"SL72"}
+              subtitulo={
+                "Estilo icónico de los años 70 perfecto para el uso diario."
+              }
               url={"/tienda"}
             />
           </div>

@@ -11,7 +11,7 @@ const dataNuestrasEmpresas = [
   {
     img: "https://lh5.googleusercontent.com/p/AF1QipNc0m8OUrP-oiueHkxwr2q8Rc2Hstqf9rM7uQl5=s450-k-no",
     title: "Miguel Graú ",
-    subtitle: "Fritz Sport, Av. Miguel Grau 231, Lima 15001",
+    subtitle: "Fz Premium, Av. Miguel Grau 231, Lima 15001",
     dataHorarios: [
       " Lunes de 09:00 am a 09:00 pm",
       " Martes de 09:00 am a 09:00 pm",

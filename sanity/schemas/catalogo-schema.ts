@@ -36,7 +36,7 @@ export const catalogo = defineType({
                   { title: "Puma", value: "puma" },
                   { title: "Reebok", value: "reebok" },
                   { title: "Cat", value: "cat" },
-                  { title: "Fritz Sport", value: "fritzsport" },
+                  { title: "Fz Premium", value: "fritzsport" },
                   { title: "joma", value: "joma" },
                 ], // <-- predefined values
               },
@@ -59,7 +59,7 @@ export const catalogo = defineType({
               type: "image",
               validation: (rule) => rule.required(),
             },
-                        {
+            {
               title: "Imagen Price Catalogo(png,webp) 155pxx65px",
               name: "imgprice",
               type: "image",
@@ -118,7 +118,7 @@ export const catalogo = defineType({
                           { title: "Originals", value: "originals" },
                           { title: "Camisetas", value: "camisetas" },
                           { title: "Toma todo", value: "tomatodos" },
-                    
+
                           { title: "Buzos", value: "buzos" },
                           { title: "Escolar", value: "escolar" },
                           { title: "Pantalón", value: "pantalon" },
@@ -129,7 +129,6 @@ export const catalogo = defineType({
                           { title: "Running", value: "running" },
                           { title: "Poleras", value: "poleras" },
                           { title: "Básquet", value: "basquet" },
-                  
                         ], // <-- predefined values
                       },
                     },
@@ -149,4 +148,3 @@ export const catalogo = defineType({
     },
   ],
 })
-

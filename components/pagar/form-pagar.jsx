@@ -91,7 +91,7 @@ export default function FormPagar({ tipoEntrega }) {
     adicional: "",
     checkTerminos: false,
     estado: "pendiente",
-    razon: "Fritz Sport",
+    razon: "Fz Premium",
   })
 
   const changeHandler = (e) => {
@@ -157,7 +157,7 @@ export default function FormPagar({ tipoEntrega }) {
       comprobante: allValues.comprobante,
       direccion: allValues.direccion,
       ruc: allValues.ruc,
-      departamento:allValues.departamento,
+      departamento: allValues.departamento,
       distrito: allValues.distrito,
       provincia: allValues.provincia,
       adicional: allValues.adicional,
@@ -211,16 +211,16 @@ export default function FormPagar({ tipoEntrega }) {
       //     },
       //   })
 
-        if (res.status === 200) {
-          router.push(data.url)
-        }
-        // const dato = await res.json()
-        setLoading(false)
+      if (res.status === 200) {
+        router.push(data.url)
+      }
+      // const dato = await res.json()
+      setLoading(false)
 
-        // setLoadingMercadoPago(false)
-        // router.refresh()
-        //test
-        // alert(data.msg)
+      // setLoadingMercadoPago(false)
+      // router.refresh()
+      //test
+      // alert(data.msg)
       // }
       if (res.status === 401) {
         alert("Ingresa un Email Valido")
@@ -613,4 +613,3 @@ export default function FormPagar({ tipoEntrega }) {
     </div>
   )
 }
-

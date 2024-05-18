@@ -17,9 +17,9 @@ export function SiteHeader() {
   return (
     <>
       <header className="border-slate-700/20 sticky top-0   z-40 w-full items-center  justify-around border-b bg-background xl:block">
-        <Banner className="flex w-full justify-center  bg-black text-base text-white dark:bg-white  dark:text-black">
+        {/* <Banner className="flex w-full justify-center  bg-black text-base text-white dark:bg-white  dark:text-black">
           30% de Descuento! Sólo por este mes*
-        </Banner>
+        </Banner> */}
         <div className="xl:hidden">
           <NavTop
             setActiveSearchDesk={setActiveSearchDesk}
