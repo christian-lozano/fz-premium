@@ -4,7 +4,7 @@ import { urlForImage } from "@/sanity/lib/image"
 
 import { precioProduct } from "@/config/precio-product"
 
-export default function Product({ products, generoSku = false }) {
+export default function Product({ products, generoSku = false, outlet }) {
   const [stock, setStock] = useState()
 
   useEffect(() => {
@@ -35,17 +35,26 @@ export default function Product({ products, generoSku = false }) {
             )}
 
             {products.descuento && (
-              <div className="absolute right-0 top-4 bg-black px-3 py-1">
+              <div className="absolute right-0 top-4  ">
                 <div className=" mt-1 text-xs text-white ">
-                  {stock ? (
-                    <div>Agotado</div>
-                  ) : (
-                    <span> -{products.descuento} %</span>
-                  )}
+                  <div className="flex flex-col ">
+                    {outlet && (
+                      <>
+                        <span className="flex justify-center bg-black px-3 py-1">
+                          {" "}
+                          {!stock ? `-${products.descuento}%` : "Agotado"}
+                        </span>
+                        <span className="mt-1 bg-red-500 px-3 py-1 uppercase">
+                          oferta
+                        </span>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
           </div>
+
           {generoSku && (
             <div className="flex items-center justify-between ">
               <h2 className="mt-4 font-medium capitalize">

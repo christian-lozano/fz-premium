@@ -3,14 +3,12 @@ import { groq } from "next-sanity"
 
 import { SanityProduct, SanitySlider } from "@/config/inventory"
 import Benefit from "@/components/benefits/Benefit"
-import Carousel from "@/components/carousel-home/Carousel"
-import HombreMujer from "@/components/hombre-mujer/hombre-mujer"
-import MainFiltroGenero from "@/components/hombre-mujer/main-filtro-genero"
 import MainTab from "@/components/tabs-home-genero/main-tab"
 
 import "@/styles/globals.css"
 import { Metadata } from "next"
 
+import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados"
 import PromoImageGrid from "@/components/promo-image-grid/promo-image-grid"
 import PromoImage from "@/components/promo-image/promo-image"
 import VideoHome from "@/components/video/video"
@@ -324,6 +322,12 @@ export default async function Page({ searchParams }: Props) {
             url={"/tienda"}
             bottom={false}
           />
+
+          {/* los mas vendidos */}
+          <div>
+            <div className="text-3xl xl:text-4xl ">LOS MAS VENDIDOS</div>
+            <CarouselProductRelacionados products={productosAll} />
+          </div>
           <div className="grid w-full grid-cols-1 xl:grid-cols-2 xl:gap-x-10">
             <PromoImage
               urlDesk={

@@ -237,11 +237,11 @@ const dataHeader = {
         },
       ],
     },
-    // {
-    //   id: "outlet",
-    //   titulo: "OUTLET",
-    //   url: "https://www.fritzsportoutlet.pe/",
-    // },
+    {
+      id: "outlet",
+      titulo: "SALE",
+      url: "outlet",
+    },
     {
       id: "tienda",
       titulo: "Tienda",

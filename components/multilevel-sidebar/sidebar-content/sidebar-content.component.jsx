@@ -16,7 +16,7 @@ const SidebarContent = (props) => {
 
   return (
     <div {...sidebarProps}>
-      <div className="sidebar-main-content sidebar-parent text-lg h-full bg-white font-semibold dark:bg-black">
+      <div className="sidebar-main-content sidebar-parent h-full bg-white text-lg font-semibold dark:bg-black">
         {headerContent}
         <div className="sidebar-body">
           <ul>
@@ -36,7 +36,13 @@ const SidebarContent = (props) => {
                           className="flex-align-start h-full"
                         >
                           {list.icon && list.icon}
-                          <span>{list.title}</span>
+                          <span
+                            className={`${
+                              list.title === "SALE" && "text-red-500"
+                            }`}
+                          >
+                            {list.title}
+                          </span>
                         </button>
                         {children && list.children && <AngleRight />}
                       </li>

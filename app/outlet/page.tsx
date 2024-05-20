@@ -74,7 +74,7 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `${priceOrder}${dateOrder}`
 
-    const productFilter = `_type == "product" && priceecommerce > 400`
+    const productFilter = `_type == "product" && priceecommerce > 400 `
     const colorFilter = color ? `&& color match "${color}"` : ""
     const tipoFilter = tipo ? `&& tipo match "${tipo}"` : ""
     const marcaFilter = marca ? `&& marca match "${marca}"` : ""
@@ -156,7 +156,7 @@ export default async function Page({ searchParams }: Props) {
                 <ProductFilters />
               </div>
             </div>
-            <ProductGrid outlet={false} products={productos} generoSku={true} />
+            <ProductGrid outlet={true} products={productos} generoSku={true} />
             {/* Product grid */}
           </section>
         </main>

@@ -1079,13 +1079,21 @@ let options = [
     disabled: false,
     to: "/tienda",
   },
+  // {
+  //   id: 20,
+  //   title: "Emprende",
+  //   icon: <i className="fa fa-graduation-cap"></i>,
+  //   hideBorder: false,
+  //   disabled: false,
+  //   to: "/emprende",
+  // },
   {
-    id: 20,
-    title: "Emprende",
+    id: 24,
+    title: "SALE",
     icon: <i className="fa fa-graduation-cap"></i>,
     hideBorder: false,
     disabled: false,
-    to: "/emprende",
+    to: "#",
   },
   {
     id: 25,
@@ -1094,8 +1102,7 @@ let options = [
     hideBorder: false,
     disabled: false,
     to: "#",
-  }
-
+  },
 ]
 
 export default options

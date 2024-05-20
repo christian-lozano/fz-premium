@@ -10,9 +10,10 @@ import Product from "./product/product"
 interface Props {
   products: SanityProduct[]
   generoSku: boolean
+  outlet: boolean | undefined
 }
 
-export function ProductGrid({ products, generoSku }: Props) {
+export function ProductGrid({ products, generoSku, outlet = false }: Props) {
   const articlesShown = 8
   const [loadMore, setLoadMore] = useState(articlesShown)
   const showMoreArticles = () => {
@@ -35,7 +36,7 @@ export function ProductGrid({ products, generoSku }: Props) {
     <div className="flex flex-col">
       <div className=" grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-3 lg:gap-x-8">
         {products.slice(0, loadMore).map((product) => (
-          <Product products={product} generoSku={generoSku} />
+          <Product outlet={outlet} products={product} generoSku={generoSku} />
         ))}
       </div>
       <div className="flex justify-center">
