@@ -37,7 +37,7 @@ export function ProductGalleryDesk({ product }: Props) {
               <PhotoProvider>
                 <PhotoView src={urlForImage(image).url()}>
                   <img
-                    className="h-full w-full"
+                    className="h-full w-full "
                     src={urlForImage(image).url()}
                     alt=""
                   />

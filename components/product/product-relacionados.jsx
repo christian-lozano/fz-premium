@@ -4,7 +4,11 @@ import { urlForImage } from "@/sanity/lib/image"
 
 import { precioProduct } from "@/config/precio-product"
 
-export default function ProductRelacionados({ products }) {
+export default function ProductRelacionados({
+  products,
+  nuevo = false,
+  generoSku = true,
+}) {
   return (
     <>
       <Link
@@ -23,18 +27,28 @@ export default function ProductRelacionados({ products }) {
             />
           )}
 
-          {products.descuento && (
+          {products.descuento ? (
             <div className="absolute right-0 top-4 bg-black px-3 py-1">
               <h4 className=" mt-1 text-xs text-white ">
-                -{products.descuento}%
+                {nuevo ? "New" : `-${products.descuento}%`}
               </h4>
             </div>
+          ) : (
+            <>
+              {nuevo && (
+                <div className="absolute right-0 top-4 bg-black px-3 py-1">
+                  <h4 className=" mt-1 text-xs text-white ">Nuevo</h4>
+                </div>
+              )}
+            </>
           )}
         </div>
-        <h3 className="mt-4 font-medium capitalize ">
-          {products.marca} - {products.genero}
-        </h3>
-        <h3 className="mt-4 font-medium uppercase ">{products.name}</h3>
+        {generoSku && (
+          <h3 className="mt-4 font-medium capitalize ">
+            {products.marca} - {products.genero}
+          </h3>
+        )}
+        <h3 className="mt-2 font-medium uppercase ">{products.name}</h3>
 
         <div className="flex">
           <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">

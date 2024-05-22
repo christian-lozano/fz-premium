@@ -5,6 +5,9 @@ import { groq } from "next-sanity"
 
 import { metadataPage } from "@/config/generateMetadata"
 import { SanityProduct } from "@/config/inventory"
+import { precioProduct } from "@/config/precio-product"
+import { AccordionDetails } from "@/components/acordion-details/acordion-details"
+import { BreadcrumbsDefault } from "@/components/bread-crumbs/bread-crumbs"
 import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados"
 import { ProductGallery } from "@/components/product-gallery"
 import { ProductGalleryDesk } from "@/components/product-gallery-desk"
@@ -56,7 +59,7 @@ export default async function Page({ params }: Props) {
     const productFilter = `_type == "product"`
 
     const generoFilterHombre = `${product.genero}`
-      ? `&& genero match "${product.genero}"&& marca match "${product.marca}"`
+      ? `&& genero match "${product.genero}"&& marca match "${product.marca}" && categories match "originals"`
       : ""
     const filter = `*[${productFilter}${generoFilterHombre}]`
 
@@ -82,21 +85,53 @@ export default async function Page({ params }: Props) {
   }
 
   const products = await productosGenero()
+
   return (
     <>
-      <main className=" sm:pt-16 ">
+      <main className=" mb-0 xl:pt-16  ">
         <div className="">
           {/* Product */}
-          <div className="pb-20 xl:flex">
-            {/* Product gallery */}
 
-            <ProductGalleryDesk product={product} />
+          <div className=" w-full xl:flex 2xl:pb-20">
+            {/* precio y nombre */}
+            <div className=" sticky top-20 z-10 border-b-[1px]  border-blue-gray-300 bg-white text-black dark:bg-white dark:text-black xl:hidden">
+              <div className=" xl:block">
+                <BreadcrumbsDefault product={product} />
+              </div>
+              <div className=" flex w-full items-center justify-between  px-4 py-2 ">
+                <h1 className="text-lg font-bold uppercase tracking-tight 2xl:text-3xl">
+                  {product.name} - {product.genero}
+                </h1>
+                <div className="flex">
+                  <p className=" mr-2 font-semibold  tracking-tight text-[#767677] line-through 2xl:text-3xl">
+                    S/{product.priceecommerce}
+                  </p>
+                  <p className="tracking-tight 2xl:text-3xl ">
+                    S/
+                    {precioProduct(
+                      product.descuento,
+                      product.priceecommerce,
+                      product.preciomanual
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* Product gallery */}
+            <div>
+              <div className="hidden border-b-[1px] border-blue-gray-300 text-black dark:text-white  xl:block  xl:border-none xl:border-transparent">
+                <BreadcrumbsDefault product={product} />
+              </div>
+              <ProductGalleryDesk product={product} />
+              <AccordionDetails product={product} />
+            </div>
 
             {/* Product info */}
             <ProductInfo product={product} />
           </div>
         </div>
       </main>
+
       <div>
         <h5 className="text-center text-2xl font-extrabold">
           Productos Relacionados

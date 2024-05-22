@@ -29,7 +29,12 @@ export function ProductGridTab({ products }: Props) {
       {products
         // .filter((el) => el.stock > 0)
         .map((product) => (
-          <Product outlet={false} products={product} relacionados={false} />
+          <Product
+            generoSku={true}
+            outlet={false}
+            products={product}
+            relacionados={false}
+          />
         ))}
     </div>
   )

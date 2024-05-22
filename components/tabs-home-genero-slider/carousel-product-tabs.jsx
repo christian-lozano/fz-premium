@@ -24,12 +24,7 @@ const responsive = {
   },
 }
 
-const CarouselProductRelacionados = ({
-  products,
-  nuevo = false,
-  generoSku = true,
-}) => {
-  const productos = products.filter((el) => el.razonsocial !== "fritzduran")
+const CarouselProductTabs = ({ productos }) => {
   return (
     <div className="parent ">
       {/* los mas vendidos */}
@@ -54,14 +49,10 @@ const CarouselProductRelacionados = ({
         dotListClass="custom-dot-list-style"
       >
         {productos.map((el, index) => (
-          <ProductRelacionados
-            generoSku={generoSku}
-            nuevo={nuevo}
-            products={el}
-          />
+          <ProductRelacionados generoSku={false} products={el} />
         ))}
       </Carousel>
     </div>
   )
 }
-export default CarouselProductRelacionados
+export default CarouselProductTabs

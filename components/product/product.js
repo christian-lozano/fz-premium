@@ -29,6 +29,10 @@ export default function Product({
     }
   }, [])
 
+  useEffect(() => {
+    setHoverImage(urlForImage(products.images[0].asset._ref).url())
+  }, [products.sku])
+
   const [data, setData] = useState(null)
   const [isLoading, setLoading] = useState(true)
 
@@ -63,7 +67,6 @@ export default function Product({
       })
   }, [])
 
-  console.log(data)
   return (
     <>
       <div className=" flex h-full flex-col justify-around  p-1 ">

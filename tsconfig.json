@@ -46,6 +46,6 @@
     "app/emprende/page.js",
     "components/seo-meta-product-view/generateMetadata.js",
     "components/icon-whatsapp/icon-whatapp.js"
-, "components/icon-whatsapp/icon-whatapp.tsx", "components/cart-items.js", "components/Header/Nav/nav-menu-desktop.tsx", "components/Header/Nav/nav-menu-hover-desktop.tsx", "components/Header/Nav/nav-navigation.jsx", "components/comunicado/comunicado.js", "components/product/product-similares.js", "utilits/scroll-top.tsx", "components/product-info.tsx"  ],
+, "components/icon-whatsapp/icon-whatapp.tsx", "components/cart-items.js", "components/Header/Nav/nav-menu-desktop.tsx", "components/Header/Nav/nav-menu-hover-desktop.tsx", "components/Header/Nav/nav-navigation.jsx", "components/comunicado/comunicado.js", "components/product/product-similares.js", "utilits/scroll-top.tsx", "components/product-info.tsx", "components/acordion-details/acordion-details.tsx", "components/tabs-home-genero-slider/carousel-product-tabs.jsx"  ],
   "exclude": ["node_modules"]
 }

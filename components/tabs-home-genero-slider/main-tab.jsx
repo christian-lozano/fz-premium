@@ -3,9 +3,11 @@
 import { useState } from "react"
 import Link from "next/link"
 
+import CarouselProductRelacionados from "../carousel-product/carousel-product-relacionados"
 import { Button } from "../ui/button"
 import Cabecera from "./cabecera"
-import { ProductGridTab } from "./product-grid-tab"
+import CarouselProductTabs from "./carousel-product-tabs"
+import { ProductSliderTab } from "./product-slider-tab"
 
 export default function MainTab({ dataCabeceraTab, dataProductTab }) {
   const [dataTab, setDataTab] = useState(dataProductTab.productosAll)
@@ -34,10 +36,10 @@ export default function MainTab({ dataCabeceraTab, dataProductTab }) {
   }
 
   return (
-    <div className="mt-10 flex h-full w-full justify-center">
+    <div className="mt-20  flex h-full w-full justify-center">
       <div className="flex  flex-col ">
         <Cabecera dataCabeceraTab={dataCabeceraTab} handler={handler} />
-        <ProductGridTab products={dataTab}></ProductGridTab>
+        <CarouselProductRelacionados nuevo={true} products={dataTab} />
         <div className="mt-5 flex w-full justify-center">
           <Link
             href={`/tienda${genero === "tienda" ? `` : `?genero=${genero}`}`}

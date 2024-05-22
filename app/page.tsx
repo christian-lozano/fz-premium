@@ -11,7 +11,6 @@ import PromoImage from "@/components/promo-image/promo-image"
 import MainTab from "@/components/tabs-home-genero/main-tab"
 import VideoHome from "@/components/video/video"
 
-
 export const metadata: Metadata = {
   title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:
@@ -216,6 +215,27 @@ export default async function Page({ searchParams }: Props) {
     promo
   }`)
 
+  const newProducts = await client.fetch<
+    SanitySlider[]
+  >(groq`*[_type == "product" && categories match "originals"][0..20] | order(_createdAt desc) {
+      _id,
+      _createdAt,
+      name,
+      sku,
+      images,
+      currency,
+      priceecommerce,
+      description,
+      genero,
+      categories,
+      marca,
+      tallas,
+      stock,
+      descuento,
+      preciomanual,
+      "slug":slug.current
+  }`)
+
   //filtro y cantidad
   const productosHombre = await productosGenero("hombre", "8")
   const productosMujer = await productosGenero("mujer", "8")
@@ -290,6 +310,18 @@ export default async function Page({ searchParams }: Props) {
 
         {/* <Carousel dataSlider={slider[0]} /> */}
 
+        {/* los mas vendidos */}
+        <div className="mt-10">
+          <div className="text-center text-3xl uppercase xl:text-4xl">
+            New Arrivals
+          </div>
+          <CarouselProductRelacionados
+            generoSku={false}
+            nuevo={true}
+            products={newProducts}
+          />
+        </div>
+
         <PromoImage
           urlDesk={
             "https://shop.adidas.jp/creative/202405/MH_AWAYTH_SAMBA_d197b341.jpg"
@@ -306,6 +338,9 @@ export default async function Page({ searchParams }: Props) {
         {/* <HombreMujer bannerGenero={bannerGenero[0]} /> */}
         {/* <MainFiltroGenero dataSemifiltroHome={categoriaSlider[0]} /> */}
         <main className=" xl:px-6">
+          <div className="text-center text-3xl uppercase xl:text-4xl">
+            Icons
+          </div>
           <MainTab
             dataCabeceraTab={dataCabeceraTab}
             dataProductTab={dataProductTab}
@@ -326,8 +361,10 @@ export default async function Page({ searchParams }: Props) {
           />
 
           {/* los mas vendidos */}
-          <div>
-            <div className="text-3xl xl:text-4xl ">LOS MAS VENDIDOS</div>
+          <div className="">
+            <div className="text-center text-3xl xl:text-4xl">
+              LOS MAS VENDIDOS
+            </div>
             <CarouselProductRelacionados products={productosAll} />
           </div>
           <div className="grid w-full grid-cols-1 xl:grid-cols-2 xl:gap-x-10">
@@ -361,32 +398,45 @@ export default async function Page({ searchParams }: Props) {
             />
           </div>
 
-          <div className="mt-20 grid grid-cols-2 gap-2 xl:grid-cols-4">
-            <PromoImageGrid
-              urlImg="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_400,w_400/Samba_B_Log_Copy_b0d6dac1a9.png"
-              titulo={"samba especial Gazela"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
-              url={"/products/zapatillas-gazelle-indoor/IH7500"}
-            />
-            <PromoImageGrid
-              urlImg="https://brand.assets.adidas.com/image/upload/f_gif,fl_lossy,q_auto/4351906_CAM_Onsite_Terrace_SS_24_SK_PLP_Teaser_Carousel_1_Copy_b87dfbe3a0.gif"
-              titulo={"samba especial Gazela"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
-              url={"/tienda"}
-            />
-            <PromoImageGrid
-              urlImg="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_400,w_400/fw23_bad_bunny_campus_launch_confirmed_glp_k_tc_d_f57ee8e7e0.jpg"
-              titulo={"samba especial Gazela"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
-              url={"/tienda"}
-            />
+          <div className="mt-20 ">
+            <div className="text-center text-3xl xl:text-4xl">
+              Categoria Destacada
+            </div>
+            <div className="grid grid-cols-2 justify-items-center gap-2 xl:grid-cols-4">
+              <PromoImageGrid
+                urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/def4074c1b5cfaf8317c95ab9405575f9bc94389-420x640.jpg"
+                titulo={"samba especial Gazela"}
+                subtitulo={
+                  "Un original, miles de historias que partieron de él."
+                }
+                url={"/products/zapatillas-gazelle-indoor/IH7500"}
+              />
+              <PromoImageGrid
+                urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/6116786d1ea4f8d900bdddd3aee0ace7efb031ab-420x640.jpg"
+                titulo={"samba especial Gazela"}
+                subtitulo={
+                  "Un original, miles de historias que partieron de él."
+                }
+                url={"/tienda"}
+              />
+              <PromoImageGrid
+                urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/d7f1f560cecada98d6c195e55c083a19ac1ac4d0-420x640.jpg"
+                titulo={"samba especial Gazela"}
+                subtitulo={
+                  "Un original, miles de historias que partieron de él."
+                }
+                url={"/tienda"}
+              />
 
-            <PromoImageGrid
-              urlImg="https://shop.adidas.jp/creative/202404/T_car_SS24_T-toe_gazelle_62b90abb.jpg"
-              titulo={"samba especial Gazela"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
-              url={"/tienda"}
-            />
+              <PromoImageGrid
+                urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/12358e578ba6bb168c457f6fe266a51311986ef4-420x640.jpg"
+                titulo={"samba especial Gazela"}
+                subtitulo={
+                  "Un original, miles de historias que partieron de él."
+                }
+                url={"/tienda"}
+              />
+            </div>
           </div>
 
           <div className="grid h-full grid-cols-2  items-center justify-center xl:flex xl:justify-around ">

@@ -48,12 +48,16 @@ const Slide = (props) => {
         />
 
         <img
-          src={urlForImage(props.slide.imgtab.asset._ref).url()}
+          src={
+            "https://cdn.sanity.io/images/ibvmpbc1/production/6d4c1d466cfd6359ca968e8e6923b3d20c6b9dd2-960x960.jpg"
+          }
           className="xl:hidden"
           alt=""
         />
         <img
-          src={urlForImage(props.slide.imgmob.asset._ref).url()}
+          src={
+            "https://cdn.sanity.io/images/ibvmpbc1/production/e57e3a1175d6fc05fdb93dbb22271caf6e3092fb-600x771.jpg"
+          }
           className="md:hidden lg:hidden xl:hidden"
           width={600}
           height={771}

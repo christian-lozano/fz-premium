@@ -39,7 +39,11 @@ export default function ProductAddToCart({ product }) {
       title: product.name,
       image: product.images[0].asset?._ref,
       objectID: product.sku,
-      price: precioProduct(product.descuento, product.priceecommerce,  product.preciomanual),
+      price: precioProduct(
+        product.descuento,
+        product.priceecommerce,
+        product.preciomanual
+      ),
       talla: String(`${selectSize.talla}`),
       slug: product.slug,
     })
@@ -72,7 +76,7 @@ export default function ProductAddToCart({ product }) {
     <div>
       <div className="mt-4">
         <p>
-          Talla: <strong>{selectSize.talla || ""}</strong>
+          Tallas: <strong>{selectSize.talla || ""}</strong>
         </p>
         {cliente &&
           product.tallas.map(({ talla, stock, _key }) => (

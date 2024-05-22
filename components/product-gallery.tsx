@@ -56,7 +56,7 @@ export function ProductGallery({ product }: Props) {
         <PhotoProvider>
           <PhotoView src={urlForImage(product.images[selectedImage]).url()}>
             <img
-              className="h-full w-full"
+              className="h-full w-2/3"
               src={urlForImage(product.images[selectedImage]).url()}
               alt=""
             />
