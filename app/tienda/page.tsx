@@ -74,7 +74,7 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `${priceOrder}${dateOrder}`
 
-    const productFilter = `_type == "product" && priceecommerce > 400`
+    const productFilter = `_type == "product" && categories match "originals"`
     const colorFilter = color ? `&& color match "${color}"` : ""
     const tipoFilter = tipo ? `&& tipo match "${tipo}"` : ""
     const marcaFilter = marca ? `&& marca match "${marca}"` : ""

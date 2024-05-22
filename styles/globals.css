@@ -417,14 +417,14 @@ button.react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
   }
 }
 
-img {
+/* img {
   view-timeline-name: --image;
   view-timeline-axis: block;
   animation-timeline: --image;
   animation-name: show;
   animation-range: entry 25% cover 30%;
   animation-fill-mode: both;
-}
+} */
 
 /* red validation form text */
 .validationFormRed {

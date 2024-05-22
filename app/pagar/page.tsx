@@ -2,7 +2,7 @@ import React from "react"
 
 import PaginaPagar from "@/components/pagar/pagar"
 
-import "@/styles/globals.css"
+
 import { Metadata } from "next"
 
 export const metadata: Metadata = {

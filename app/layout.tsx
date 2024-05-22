@@ -17,7 +17,7 @@ import { Providers } from "@/components/providers"
 import { SiteBlob } from "@/components/site-blob"
 
 import GoogleAnalytics from "./GoogleAnalytics"
-
+import "@/styles/globals.css"
 export const metadata: Metadata = {
   title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:

@@ -27,24 +27,26 @@ interface Props {
   }
 }
 export const metadata: Metadata = {
-  title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
+  title: "Fz Premium Outlet Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:
     "Bienvenido(a) al sitio oficial de Fz Premium Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
   openGraph: {
-    title: " Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
+    title:
+      " Fz Premium Outlet Perú Tienda oficial | Zapatillas y ropa deportiva",
     description:
       "Bienvenido(a) al sitio oficial de Fz Premium Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
     url: `${process.env.URL_DOMINIO}`,
     siteName: "Fz Premium",
     images: [
       {
-        url: `${process.env.URL_DOMINIO}/ecommerce-share.jpg`,
+        url: `https://www.fzpremium.pe/ecommerce-share.jpeg`,
+
         width: 800,
         height: 600,
         alt: `Fz Premium share Imagen`,
       },
       {
-        url: `${process.env.URL_DOMINIO}/ecommerce-share.jpg`,
+        url: `https://www.fzpremium.pe/ecommerce-share.jpeg`,
 
         width: 1200,
         height: 630,
@@ -74,7 +76,7 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `${priceOrder}${dateOrder}`
 
-    const productFilter = `_type == "product" && priceecommerce > 400 `
+    const productFilter = `_type == "product" && categories match "originals"`
     const colorFilter = color ? `&& color match "${color}"` : ""
     const tipoFilter = tipo ? `&& tipo match "${tipo}"` : ""
     const marcaFilter = marca ? `&& marca match "${marca}"` : ""

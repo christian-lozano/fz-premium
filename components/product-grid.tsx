@@ -63,7 +63,8 @@ export function ProductGrid({ products, generoSku, outlet = false }: Props) {
         )}
       </div>
       <div className="mt-5 flex justify-center">
-        {loadMore} de {products?.length} Productos
+        {loadMore > products?.length ? products?.length : loadMore} de{" "}
+        {products?.length} Productos
       </div>
     </div>
   )

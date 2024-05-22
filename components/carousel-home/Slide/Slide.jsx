@@ -8,6 +8,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { urlForImage } from "@/sanity/lib/image"
 
+import { Button } from "@/components/ui/button"
+import PromoImageSec from "@/components/promo-image/promo-image"
+
 const Slide = (props) => {
   const { className } = props
 
@@ -18,25 +21,32 @@ const Slide = (props) => {
           <img src={urlForImage(props.slide.img2.asset._ref).url()} alt="" />
         </div>
       )}
-      {props.slide.activebuttontitle && (
+      {!props.slide.activebuttontitle && (
         <div className="slidecont ">
           <div className="slidetitles">
-            <h3 className=" text-white">{props.slide.subtitulo}</h3>
-            <h1 className="text-2xl font-bold uppercase text-white">
-              {props.slide.titulo}
-            </h1>
+            <div className="">
+              Un ícono del running de los 70 que cautiva el <br /> street style
+              en todo el mundo.
+            </div>
+            <div className="title text-2xl font-bold uppercase  xl:text-5xl">
+              SL 72
+            </div>
           </div>
           <Link href={props.slide.link}>
-            <Appbtn
-              text={props.slide.btntext}
-              className="capitalize"
-              icon="fal fa-chevron-right"
-            />
+            <Button className="mt-2 rounded-none uppercase">
+              Comprar Ahora
+            </Button>
           </Link>
         </div>
       )}
       <Link href={props.slide.urlslider} className="img-main">
-        <img src={urlForImage(props.slide.imgdeskt.asset._ref).url()} alt="" />
+        <img
+          src={
+            "https://cdn.sanity.io/images/ibvmpbc1/production/62d090cdd2fba7597cb3b548f9c747ff83aa1b4a-1920x853.jpg"
+          }
+          alt=""
+        />
+
         <img
           src={urlForImage(props.slide.imgtab.asset._ref).url()}
           className="xl:hidden"

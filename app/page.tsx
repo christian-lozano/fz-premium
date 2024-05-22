@@ -1,17 +1,16 @@
+import { Metadata } from "next"
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
 
 import { SanityProduct, SanitySlider } from "@/config/inventory"
 import Benefit from "@/components/benefits/Benefit"
-import MainTab from "@/components/tabs-home-genero/main-tab"
-
-import "@/styles/globals.css"
-import { Metadata } from "next"
-
+import Carousel from "@/components/carousel-home/Carousel"
 import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados"
 import PromoImageGrid from "@/components/promo-image-grid/promo-image-grid"
 import PromoImage from "@/components/promo-image/promo-image"
+import MainTab from "@/components/tabs-home-genero/main-tab"
 import VideoHome from "@/components/video/video"
+
 
 export const metadata: Metadata = {
   title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
@@ -25,13 +24,14 @@ export const metadata: Metadata = {
     siteName: "Fz Premium",
     images: [
       {
-        url: `${process.env.URL_DOMINIO}/ecommerce-share.jpg`,
+        url: `https://www.fzpremium.pe/ecommerce-share.jpeg`,
+
         width: 800,
         height: 600,
         alt: `Fz Premium share Imagen`,
       },
       {
-        url: `${process.env.URL_DOMINIO}/ecommerce-share.jpg`,
+        url: `https://www.fzpremium.pe/ecommerce-share.jpeg`,
 
         width: 1200,
         height: 630,
@@ -161,7 +161,7 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `| order(_id) [0...${cantidad}]`
 
-    const productFilter = `_type == "product" && priceecommerce > 400`
+    const productFilter = `_type == "product" && categories match "originals"`
 
     const generoFilterHombre = genero ? `&& genero match "${genero}"` : ""
 
@@ -180,6 +180,7 @@ export default async function Page({ searchParams }: Props) {
       priceecommerce,
       description,
       genero,
+      categories,
       marca,
       tallas,
       stock,
@@ -284,7 +285,8 @@ export default async function Page({ searchParams }: Props) {
     <div>
       {/* <DialogSizes promoHome={promoHome}></DialogSizes> */}
       <div className="conta">
-        <VideoHome url={homeVideo[0]} />
+        <Carousel dataSlider={slider[0]} />
+        {/* <VideoHome url={homeVideo[0]} /> */}
 
         {/* <Carousel dataSlider={slider[0]} /> */}
 
@@ -319,7 +321,7 @@ export default async function Page({ searchParams }: Props) {
             subtitulo={
               "Diseñado para una nueva generación de tiradores. Fiel al ADN del Arsenal"
             }
-            url={"/tienda"}
+            url={"/products/zapatillas-campus-00s-korn/IG0792"}
             bottom={false}
           />
 
@@ -340,7 +342,7 @@ export default async function Page({ searchParams }: Props) {
               subtitulo={
                 "Los zapatos Last Campus están inspirados en el estilo western favorito de Benito y su Most Wanted Tour"
               }
-              url={"/tienda"}
+              url={"/products/bad-bunny-adidas-campus-olive/ID7950"}
               bottom={true}
             />
             <PromoImage
@@ -364,7 +366,7 @@ export default async function Page({ searchParams }: Props) {
               urlImg="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_400,w_400/Samba_B_Log_Copy_b0d6dac1a9.png"
               titulo={"samba especial Gazela"}
               subtitulo={"Un original, miles de historias que partieron de él."}
-              url={"/tienda"}
+              url={"/products/zapatillas-gazelle-indoor/IH7500"}
             />
             <PromoImageGrid
               urlImg="https://brand.assets.adidas.com/image/upload/f_gif,fl_lossy,q_auto/4351906_CAM_Onsite_Terrace_SS_24_SK_PLP_Teaser_Carousel_1_Copy_b87dfbe3a0.gif"

@@ -1,7 +1,7 @@
 
 import { CartItems } from "@/components/cart-items"
 import { CartSummary } from "@/components/cart-summary"
-import "@/styles/globals.css"
+
 export default function Page() {
   return (
     <div>

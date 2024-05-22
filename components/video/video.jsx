@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function VideoHome({ url }) {
   return (
     <>
-      <Link href={"/tienda"}>
+      <Link href={"/products/zapatillas-sl-72/IE3427"}>
         <video
           muted={true}
           webkit-playsinline={true}
@@ -32,7 +32,7 @@ export default function VideoHome({ url }) {
           />
         </video>
       </Link>
-      <Link href={"/tienda"}>
+      <Link href={"/products/zapatillas-sl-72/IE3427"}>
         <video
           muted={true}
           webkit-playsinline={true}

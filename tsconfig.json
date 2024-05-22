@@ -31,7 +31,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/Typeandtype/Typeandtype.jsx",
-    "components/product/product.jsx",
+    "components/product/product.js",
     "components/benefits/Benefit.jsx",
     "components/tabs-home-genero/cabecera.jsx",
     "components/tabs-home-genero/main-tab.jsx",
@@ -46,6 +46,6 @@
     "app/emprende/page.js",
     "components/seo-meta-product-view/generateMetadata.js",
     "components/icon-whatsapp/icon-whatapp.js"
-, "components/icon-whatsapp/icon-whatapp.tsx", "components/cart-items.js", "components/Header/Nav/nav-menu-desktop.tsx", "components/Header/Nav/nav-menu-hover-desktop.tsx", "components/Header/Nav/nav-navigation.jsx", "components/comunicado/comunicado.js"  ],
+, "components/icon-whatsapp/icon-whatapp.tsx", "components/cart-items.js", "components/Header/Nav/nav-menu-desktop.tsx", "components/Header/Nav/nav-menu-hover-desktop.tsx", "components/Header/Nav/nav-navigation.jsx", "components/comunicado/comunicado.js", "components/product/product-similares.js", "utilits/scroll-top.tsx", "components/product-info.tsx"  ],
   "exclude": ["node_modules"]
 }

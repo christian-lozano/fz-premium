@@ -7,10 +7,10 @@ import { Logo } from "@/components/logo/logo"
 
 const Column = (props) => {
   const icons = [
-    "https://i.imgur.com/4JoWdxf.png",
-    "https://i.imgur.com/oWHKLnj.jpg",
+    "https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png",
+    "https://mtf.mastercard.co.za/content/dam/public/mastercardcom/mea/za/logos/mc-logo-52.svg",
     // "https://i.imgur.com/SCFSSVs.png",
-    "https://i.imgur.com/kuSZEpB.png",
+    // "https://i.imgur.com/kuSZEpB.png",
   ]
   const { column, logo } = props
   const [activecol, setActivecol] = useState(false)
@@ -23,8 +23,8 @@ const Column = (props) => {
           <div>
             <h4>Aceptamos Pagos</h4>
             <div>
-              {icons?.map((icon) => {
-                return <img src={icon} alt="" />
+              {icons?.map((icon, i) => {
+                return <img src={icon} className={i == 1 && "200px"} alt="" />
               })}
             </div>
           </div>

@@ -2,7 +2,6 @@
 
 import { client } from "@/sanity/lib/client"
 
-import "@/styles/exito.css"
 import { useEffect, useState } from "react"
 import { notFound } from "next/navigation"
 import { PatchSelection } from "@sanity/client"

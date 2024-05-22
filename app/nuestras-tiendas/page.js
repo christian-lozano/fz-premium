@@ -2,7 +2,7 @@ import { client } from "@/sanity/lib/client"
 
 import NuestrasTiendas from "@/components/nuestras-tiendas/nuestras-tiendas"
 
-import "@/styles/globals.css"
+
 import { groq } from "next-sanity"
 
 export const metadata = {

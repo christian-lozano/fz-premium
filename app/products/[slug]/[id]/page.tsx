@@ -1,16 +1,14 @@
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
 
+import { metadataPage } from "@/config/generateMetadata"
 import { SanityProduct } from "@/config/inventory"
 import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados"
 import { ProductGallery } from "@/components/product-gallery"
+import { ProductGalleryDesk } from "@/components/product-gallery-desk"
 import { ProductInfo } from "@/components/product-info"
-
-import "@/styles/globals.css"
-import { Metadata } from "next"
-import { notFound } from "next/navigation"
-
-import { metadataPage } from "@/config/generateMetadata"
 
 interface Props {
   params: {
@@ -27,7 +25,7 @@ export const generateMetadata = async ({
 
 export default async function Page({ params }: Props) {
   const product =
-    await client.fetch<SanityProduct>(groq`*[_type == "product" && slug.current == "${params.slug}" && sku == "${params.id}"][0] {
+    await client.fetch<SanityProduct>(groq`*[_type == "product" &&  categories match "originals" && slug.current == "${params.slug}" && sku == "${params.id}"][0] {
     _id,
     _createAt,
     "id":_id,
@@ -86,12 +84,14 @@ export default async function Page({ params }: Props) {
   const products = await productosGenero()
   return (
     <>
-      <main className="mx-auto max-w-6xl sm:px-6 sm:pt-16 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-none">
+      <main className=" sm:pt-16 ">
+        <div className="">
           {/* Product */}
-          <div className="pb-20 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-12">
+          <div className="pb-20 xl:flex">
             {/* Product gallery */}
-            <ProductGallery product={product} />
+
+            <ProductGalleryDesk product={product} />
+
             {/* Product info */}
             <ProductInfo product={product} />
           </div>
